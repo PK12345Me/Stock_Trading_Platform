@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+
+{% block main %}
+<table style="margin-left: auto; margin-right: auto;">
+    <tr>
+
+        <th style="padding: 30px;">Symbols</th>
+
+        <th style="padding: 30px;">Shares</th>
+        <th style="padding: 30px;">Price</th>
+        <th style="padding: 30px;">Total</th>
+
+
+    </tr>
+    {% for row in existing %}
+    <tr>
+
+        <td>{{ row['symbols'] }}</td>
+        <td>{{ row['SUM(shares)'] }}</td>
+        <td>${{ (row['SUM(purchase)'] / row['SUM(shares)']) | round(2) }}</td> <!--purchase is giving wrong data, which is not there anymore-->
+        <td>${{ row['SUM(purchase)'] | round(2) }}</td>
+
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="2"></td>
+        <td><strong>Total Stock Value</strong></td>
+        <td>{{ value  | round(2) | usd }}</td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td><strong>Cash</strong></td>
+        <td>{{ cash | usd }}</td> <!--cash | round(2)-->
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td><strong>Grand Total</strong></td>
+        <td>${{ value + cash }}</td> <!--sub_total + cash | round(2)-->
+
+</table>
+{% endblock %}

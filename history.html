@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table style="margin-left: auto; margin-right: auto;">
+    <tr>
+
+        <th style="padding: 30px;">Symbols</th>
+        <th style="padding: 30px;">Shares</th>
+        <th style="padding: 30px;">Price</th>
+        <th style="padding: 30px;">Timestamp</th>
+        <th style="padding: 30px;">Transaction Type</th>
+
+    </tr>
+    {% for row in union %}
+    <tr>
+        <td>{{ row["symbols"] }}</td>
+        <td>{{ row["shares"] }}</td>
+        <td>{{ row["amount"] | usd }}</td>
+        <td>{{ row["timestamp"] }}</td>
+        <td>{{ row["type"] }}</td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

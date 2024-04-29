@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+<div>
+    <p>You bought {{ result.symbol }} at this Price: {{ result.price | usd }} amounting to
+        {{(result.price * shares|float) | usd }} total available cash is {{cash | usd}} </p>
+</div>
+{% endblock %}
