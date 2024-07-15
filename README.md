@@ -13,3 +13,5 @@ Following is the list of functionalities
 - sell
 - history
 - landing page
+
+copyright - Harvard's CS50 Program
