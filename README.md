@@ -1,5 +1,5 @@
 # Stock Trading Platform
-Its a stock trading platform without race function
+Its a stock trading platform without race function tracking all the user-purchases and sells, without the wallet/payment-gatweway integration
 
 ![image](https://github.com/PK12345Me/Stock_Trading_Platform/assets/157260183/947090dd-2984-4f9c-935f-9ae44fbc1af7)
 
